@@ -25,7 +25,21 @@ app.use(
 );
 
 //Routes
-app.post("/api/auth/register", userAuthentication.register);
+app.post("/api/auth/register", async (req, res) => {
+  try {
+    console.log("register func called");
+    await userAuthentication.register(req, res);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({
+      message: "Internal server error",
+    });
+  }
+});
+
+app.get("/Home", (req, res) => {
+  res.redirect("/Home");
+});
 
 //Listening to the server
 const PORT = process.env.PORT;

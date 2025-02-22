@@ -7,3 +7,8 @@ node_modules/
 # Build files
 build/
  
+
+# Tailwind CSS output files
+public/tailwind.css
+src/tailwind.css
+dist/

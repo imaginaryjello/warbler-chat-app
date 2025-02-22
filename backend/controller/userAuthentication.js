@@ -12,11 +12,14 @@ module.exports = {
       const existingUser = await authmodel.findOne({
         email,
       });
-      if (existingUser) {
-        return res.status(400).json({
-          message: "User already exists",
-        });
-      }
+
+      //checking if the user already exists
+
+      // if (existingUser) {
+      //   return res.status(400).json({
+      //     message: "User already exists",
+      //   });
+      // }
 
       //validating the field
       if (!email || !password) {
@@ -30,11 +33,17 @@ module.exports = {
         email,
         password,
       });
-      await user.save();
+
+      //Saving the user to the database
+
+      // await user.save();
 
       res.status(201).json({
         message: "User registered successfully",
+        status: 201,
       });
+
+      //how do i send response as url to redirect to login page
     } catch (err) {
       console.log(err);
       res.status(500).json({

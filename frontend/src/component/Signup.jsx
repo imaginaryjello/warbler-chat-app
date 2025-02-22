@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import axios from "axios";
 import "../App.css";
 
@@ -6,6 +7,7 @@ export default function Signup() {
   const [signupData, setSignupData] = useState({ email: "", password: "" });
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,6 +24,9 @@ export default function Signup() {
         signupData
       );
       setMessage(response.data.message);
+      if (response.status === 201) {
+        setTimeout(() => navigate("/home"), 2000); // Navigate after 2 seconds
+      }
     } catch (error) {
       setMessage(error.response?.data?.message || "Something went wrong!");
     } finally {
@@ -60,9 +65,9 @@ export default function Signup() {
         <div className="login-redirect">
           <p>
             Already have an account?{" "}
-            <a href="/login" className="login-link">
+            <span className="login-link" onClick={() => navigate("/home")}>
               Login
-            </a>
+            </span>
           </p>
         </div>
       </div>
