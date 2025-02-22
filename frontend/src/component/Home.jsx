@@ -1,18 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
-import Navbar from "./Navbar"; // ✅ Ensure the filename is correct (capital 'N')
+import Navbar from "./navbar"; // ✅ Ensure the filename is correct (capital 'N')
 
 export default function Home() {
-  const [search, setSearch] = React.useState(""); // ✅ Add state for search
-  const [friends, setFriends] = React.useState([]); // ✅ Add state for friends
-  const [loading, setLoading] = React.useState(false); // ✅ Add state for loading
-  const navigate = useNavigate(); // ✅ Import useNavigate
-
-  const handleChange = (e) => {
-    setSearch(e.target.value); // ✅ Update search state
-  };
-
   return (
     <div className="min-h-screen bg-amber-300 flex flex-col items-center">
       <Navbar />
