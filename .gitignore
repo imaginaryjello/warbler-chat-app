@@ -1,5 +1,10 @@
 # Node modules
 node_modules/
+package-lock.json
+yarn.lock
+package.json
+package.json5
+
 
 # Environment variables
 .env
