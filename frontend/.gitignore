@@ -15,7 +15,6 @@ package-lock.json
 yarn.lock
 yarn-error.log
 .pnp
-package.json
 
 # Editor directories and files
 .vscode/*
@@ -27,3 +26,9 @@ package.json
 *.njsproj
 *.sln
 *.sw?
+
+# Tailwind CSS output files
+public/tailwind.css
+src/tailwind.css
+dist/
+
