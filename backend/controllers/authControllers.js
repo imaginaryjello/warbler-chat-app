@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const User = require("../model/User");
+const User = require("../model/user");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
@@ -70,7 +70,7 @@ const authMiddleware = async (req, res, next) => {
 /////GET PROFILE/////
 
 const getProfile = async (req, res) => {
-  const {token} = req.cookies;
+  const { token } = req.cookies;
   if (token) {
     jwt.verify(token, process.env.JWT_SECRET, {}, (err, user) => {
       if (err) throw err;
