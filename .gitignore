@@ -1,9 +1,22 @@
 # Node modules
 node_modules/
+package-lock.json
+yarn.lock
+package.json
+package.json5
+
 
 # Environment variables
 .env
 
 # Build files
 build/
+
+package-lock.json
+package.json
  
+
+# Tailwind CSS output files
+public/tailwind.css
+src/tailwind.css
+dist/
