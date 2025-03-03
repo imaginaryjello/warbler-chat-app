@@ -9,17 +9,16 @@ export default function Dashboard() {
 
   const logoutUser = () => {
     localStorage.removeItem("token");
+
     setUser(null);
     navigate("/login");
   };
   return (
     <main>
-      <div>
-        <h1>Profile</h1>
-      </div>
+      
       <div className="profile">{!!user && <h2>HI {user.email}!</h2>}</div>
 
-      <button id="logout" onClick={logoutUser}>
+      <button id="logout" onClick={logoutUser} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
         Logout
       </button>
     </main>

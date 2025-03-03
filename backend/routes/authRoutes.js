@@ -16,6 +16,23 @@ router.use(
   })
 );
 
+
+//Routes
+router.post("/register", async (req, res) => {
+  try {
+    console.log("register func called");
+    await userAuthentication.register(req, res);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({
+      message: "Internal server error",
+    });
+  }
+});
+
+router.get("/home", (req, res) => {
+  res.redirect("/Home");
+});
 router.post("/login", loginUser);
 router.get("/profile", getProfile);
 router.get("/protected", authMiddleware, (req, res) => {

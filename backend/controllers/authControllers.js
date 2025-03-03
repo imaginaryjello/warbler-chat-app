@@ -74,7 +74,7 @@ const getProfile = async (req, res) => {
   if (token) {
     jwt.verify(token, process.env.JWT_SECRET, {}, (err, user) => {
       if (err) throw err;
-      re.json(user);
+      req.json(user);
     });
   } else {
     res.json(null);

@@ -20,7 +20,7 @@ export default function Signup() {
     setMessage("");
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/register",
+        "http://localhost:5000/register",
         signupData
       );
       setMessage(response.data.message);
@@ -66,7 +66,7 @@ export default function Signup() {
         <div className="login-redirect">
           <p>
             Already have an account?{" "}
-            <span className="login-link" onClick={() => navigate("/home")}>
+            <span className="login-link" onClick={() => navigate("/login")}>
               Login
             </span>
           </p>

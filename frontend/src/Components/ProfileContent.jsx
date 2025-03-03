@@ -1,6 +1,6 @@
 export default function ProfileContent() {
   return (
-    <div className="flex justify-between items-center mt-3 w-full h-8 border-b-2 border-b-slate-900 ">
+    <div className="flex gap-12 justify-center items-center mt-3 w-full h-8 border-b-2 border-b-slate-900 ">
       <a href="/posts" className="no-underline  text-black visited:text-black">
         <div className="flex items-center">
           <svg

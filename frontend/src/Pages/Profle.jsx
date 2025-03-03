@@ -3,8 +3,10 @@ import React from "react";
 import Profileheader from "../Components/Profileheader";
 import ProfileContent from "../Components/ProfileContent";
 import Postgrid from "../Components/Postgrid";
+import Navbar from "../Components/Navbar";
 // import "../assets/Profile.css";
-export function Profile() {
+export default function Profile() {
+
   const headerElements = mockUser.map((data) => {
     return (
       <Profileheader
@@ -29,9 +31,12 @@ export function Profile() {
   );
   return (
     <main className="container  mx-auto p-4 ">
+    <Navbar />
+
       {headerElements}
      <ProfileContent/>
       <div className=" grid gap-2 grid-cols-3 mt-6">{gridElements}</div>
     </main>
   );
 }
+
