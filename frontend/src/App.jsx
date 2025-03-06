@@ -8,6 +8,7 @@ import Navbar from "./Components/Navbar";
 import Profile from "./Pages/Profle";
 import Dashboard from "./Components/Dashboard";
 import Chat from "./Pages/Chat";
+import { Toaster } from "react-hot-toast";
 import ProtectedRoutes from "./Components/Protectedroutes";
 import "./App.css";
 import "./assets/Tailwind.css";
@@ -18,7 +19,7 @@ function App() {
   return (
     <UserContextProvider>
       <Router>
-   
+        <Toaster position="top-right" reverseOrder={false} />
         <Routes>
           <Route path="/register" element={<Signup />} />
           <Route
